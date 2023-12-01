@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Window x:ConnectionId='1'
+    x:Class="c__Winui3_test.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:c__Winui3_test"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d">
+
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Orientation="Horizontal">
+        <CommandBar>
+            <AppBarButton Icon="Sort">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <RadioMenuFlyoutItem x:ConnectionId='5'
+                            x:Name="Option1"
+                                                                        
+                            Text="option1" />
+                        <RadioMenuFlyoutItem x:ConnectionId='6'
+                            x:Name="Option2"
+                                                                        
+                            Text="option2" />
+                        <RadioMenuFlyoutItem x:ConnectionId='7'
+                            x:Name="Option3"
+                                                                        
+                            Text="option3" />
+                        <RadioMenuFlyoutItem x:ConnectionId='8'
+                            x:Name="Option4"
+                                                                        
+                            Text="option4" />
+                        <MenuFlyoutSeparator />
+                        <RadioMenuFlyoutItem x:ConnectionId='9'
+                            x:Name="Option5"
+                                                                        
+                            Text="option5" />
+                        <RadioMenuFlyoutItem x:ConnectionId='10'
+                            x:Name="Option6"
+                                                                        
+                            Text="option6" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton Icon="Filter">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <RadioMenuFlyoutItem x:ConnectionId='2'
+                            x:Name="Option7"
+                                                                        
+                            Text="option7" />
+                        <RadioMenuFlyoutItem x:ConnectionId='3'
+                            x:Name="Option8"
+                                                                        
+                            Text="option8" />
+                        <RadioMenuFlyoutItem x:ConnectionId='4'
+                            x:Name="Option9"
+                                                                        
+                            Text="option9" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+        </CommandBar>
+    </StackPanel>
+</Window>
+

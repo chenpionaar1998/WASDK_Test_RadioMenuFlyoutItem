@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window
+    x:Class="c__Winui3_test.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:c__Winui3_test"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Orientation="Horizontal">
+        <CommandBar>
+            <!--
+                The RadioMenuFlyoutItem's default IsChecked is set from the code behind in InitializeFlyout()
+                Issue: when the groupname is set via x:Bind or Binding, it seems to happen later than IsChecked is set,
+                leading to all these RadioMenuFlyoutItem being in the same group and thus, only 1 item would have the deafult value
+                set (the last one that's set in InitializeFlyout(), which is option6)
+            -->
+            <AppBarButton Icon="Sort">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <!--  The RadioMenuFlyoutItem Option1 - 4 are in the same GroupName  -->
+                        <RadioMenuFlyoutItem
+                            x:Name="Option1"
+                            GroupName="{x:Bind VM.Group1, Mode=OneTime}"
+                            Text="option1" />
+                        <RadioMenuFlyoutItem
+                            x:Name="Option2"
+                            GroupName="{x:Bind VM.Group1, Mode=OneTime}"
+                            Text="option2" />
+                        <RadioMenuFlyoutItem
+                            x:Name="Option3"
+                            GroupName="{x:Bind VM.Group1, Mode=OneTime}"
+                            Text="option3" />
+                        <RadioMenuFlyoutItem
+                            x:Name="Option4"
+                            GroupName="{x:Bind VM.Group1, Mode=OneTime}"
+                            Text="option4" />
+                        <MenuFlyoutSeparator />
+                        <!--  The RadioMenuFlyoutItem Option5 - 6 are in the same GroupName  -->
+                        <RadioMenuFlyoutItem
+                            x:Name="Option5"
+                            GroupName="{x:Bind VM.Group2, Mode=OneTime}"
+                            Text="option5" />
+                        <RadioMenuFlyoutItem
+                            x:Name="Option6"
+                            GroupName="{x:Bind VM.Group2, Mode=OneTime}"
+                            Text="option6" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton Icon="Filter">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <!--  The RadioMenuFlyoutItem Option7 - 9 are in the same GroupName  -->
+                        <RadioMenuFlyoutItem
+                            x:Name="Option7"
+                            GroupName="{x:Bind VM.Group3, Mode=OneTime}"
+                            Text="option7" />
+                        <RadioMenuFlyoutItem
+                            x:Name="Option8"
+                            GroupName="{x:Bind VM.Group3, Mode=OneTime}"
+                            Text="option8" />
+                        <RadioMenuFlyoutItem
+                            x:Name="Option9"
+                            GroupName="{x:Bind VM.Group3, Mode=OneTime}"
+                            Text="option9" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+        </CommandBar>
+    </StackPanel>
+</Window>
